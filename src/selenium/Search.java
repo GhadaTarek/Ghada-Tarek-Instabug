@@ -26,6 +26,22 @@ public class Search {
 			System.out.println("Google Link isnot exist! Failed! ");
 			
 		}
+		
+		//Bonus: Assertion on search results
+		
+		List<WebElement> results = driver.findElements(By.xpath("//*[@id="input"]"));   
+		//Get the Total Count
+		System.out.println(results.size());
+		if(results.size() ==100)
+		  {
+                      System.out.println("100 REsults are found as Expected");
+                  }
+
+                 //display value for each results
+                 for(WebElement each : results)
+			{
+  			     System.out.println(each.getAttribute("href"));
+			}
 	
 		
 		driver.close();
